@@ -115,7 +115,7 @@ function Get-PipeResults {
         Switch ($Output) {
             "Text" {
                 $Object | Out-File $PathVariable\$FileName.txt
-                #Adds content to the PipeResults text file including the contents of TestResults.txt.
+                #Out files the object into a text file.
                 Write-Verbose "Generating results file"
                 Start-Sleep -Seconds 1
                 Write-Verbose "Opening results"

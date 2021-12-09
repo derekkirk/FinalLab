@@ -115,15 +115,13 @@ function Get-PipeResults {
         Switch ($Output) {
             "Text" {
                 $Object | Out-File $PathVariable\$FileName.txt
-                #Out files the object into a text file.
+                #Out files the object information into a text file.
                 Write-Verbose "Generating results file"
                 Start-Sleep -Seconds 1
                 Write-Verbose "Opening results"
                 Start-Sleep -Seconds 2
                 Notepad.exe $PathVariable\$FileName.txt
-                Start-Sleep -Seconds 2
-                Remove-Item $PathVariable\$FileName.txt
-                #Opens the PipeResults text file and removes the TestResults text file.
+                #Opens the text file.
                 } #Text
             "CSV" {
                 Write-Verbose "Generating results file as CSV"

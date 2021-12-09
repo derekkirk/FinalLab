@@ -114,14 +114,14 @@ function Get-PipeResults {
     Process {
         Switch ($Output) {
             "Text" {
-                $Object | Out-File $PathVariable\TestResults.txt
-                Add-Content $PathVariable\$FileName.txt -value (Get-Content $PathVariable\TestResults.txt)
+                $Object | Out-File $PathVariable\$FileName.txt
                 #Adds content to the PipeResults text file including the contents of TestResults.txt.
                 Write-Verbose "Generating results file"
                 Start-Sleep -Seconds 1
                 Write-Verbose "Opening results"
                 Start-Sleep -Seconds 2
                 Notepad.exe $PathVariable\$FileName.txt
+                Start-Sleep -Seconds 2
                 Remove-Item $PathVariable\$FileName.txt
                 #Opens the PipeResults text file and removes the TestResults text file.
                 } #Text

@@ -83,14 +83,14 @@ function Get-PipeResults {
     .PARAMETER Object
     Accepts multiple objects from the pipeline.
     .EXAMPLE
-    Get-PipeResults -ComputerName 192.168.1.70 -Output 'Host'.
-    Executing this command will run the Get-PipeResults script and display the results of the script on the screen.
+    Get-Process -Name *shell | Get-PipeResults -Output Text
+    Executing this command will run the Get-PipeResults script and retrieve the processes that start with 'shell' and output the contents to a text file.
     .EXAMPLE
-    Get-PipeResults -ComputerName 192.168.1.70 -Output 'Text'
-    Executing this command will run the Get-PipeResults script and output the results of the scripts in text file.
-    .EXAMPLE
-    Get-PipeResults -ComputerName 192.168.1.70 -Output 'CSV'.
-    Executing this command will run the Get-PipeResults script and output the results of the script in a CSV file.
+    Get-Process -Name *shell | Get-PipeResults
+    Executing this command will run the Get-PipeResults script and retrieve the processes that start with 'shell' and output the contents to the screen.
+    .EXAMPLE.
+    Test-CloudFlare -ComputerName 192.168.1.70 | Get-PipeResults  -Output 'CSV'.
+    Executing this command will run the Test-CloudFlare and Get-PipeResults script and output the results of the script in a CSV file.
     .NOTES
     Author: Derek Kirk
     Last Modified: 12-09-2021
